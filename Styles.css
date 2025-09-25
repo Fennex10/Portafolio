@@ -1,0 +1,338 @@
+/* ==========================
+   IMPORTAR FUENTE
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ==========================
+   RESET Y GLOBAL
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  color: #f7f9f8;
+  padding-top: 120px;
+  background-color: #121212;
+}
+
+[id] {
+  scroll-margin-top: 120px;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.B_arriba {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #0e1118;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.B_arriba ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.B_arriba .LogoArriba {
+  width: 100px;
+  height: 100px;
+}
+
+.B_arriba button {
+  font-size: 20px;
+  color: #f7f9f8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  text-shadow: 2px 2px #000;
+}
+
+.B_arriba button:hover {
+  color: #6795c2;
+  transform: scale(1.2);
+}
+
+/* ==========================
+   SECCIONES
+========================== */
+section {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* ----- Inicio ----- */
+.B_inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 800px;
+  background: url("Fondos/Fondo_inicio.jpg") center/cover no-repeat;
+}
+
+.B_inicio .DLGP,
+.B_inicio .DContexto {
+  max-width: 500px;
+  padding: 30px;
+  line-height: 1.6;
+  text-align: justify;
+  background-color: #0e1118;
+  text-shadow: 2px 2px #000;
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.B_inicio .DLGP { transform: translateX(-20px); }
+.B_inicio .DContexto { transform: translateX(20px); }
+
+.B_inicio p.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ----- Sobre mí ----- */
+.B_sobre_mi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 800px;
+  background: url("Fondos/Fondo_sobremi.gif") left/cover no-repeat #0a1817;
+}
+
+.B_sobre_mi .Dsobremi {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #0e1118;
+  border-radius: 50%;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Iconos en círculo dinámico */
+.B_sobre_mi .IconContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.B_sobre_mi .IconContainer .icon {
+  width: 100px;
+  height: 100px;
+  background-color: #0e1118;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* Distribución circular de iconos */
+.B_sobre_mi .IconContainer .icon:nth-child(1) { transform: rotate(0deg) translate(180px) rotate(0deg); }
+.B_sobre_mi .IconContainer .icon:nth-child(2) { transform: rotate(60deg) translate(180px) rotate(-60deg); }
+.B_sobre_mi .IconContainer .icon:nth-child(3) { transform: rotate(120deg) translate(180px) rotate(-120deg); }
+.B_sobre_mi .IconContainer .icon:nth-child(4) { transform: rotate(180deg) translate(180px) rotate(-180deg); }
+.B_sobre_mi .IconContainer .icon:nth-child(5) { transform: rotate(240deg) translate(180px) rotate(-240deg); }
+.B_sobre_mi .IconContainer .icon:nth-child(6) { transform: rotate(300deg) translate(180px) rotate(-300deg); }
+
+/* ----- Proyectos ----- */
+.B_proyectos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 1000px;
+  background-color: #0a1817;
+}
+
+.B_proyectos h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px #000;
+}
+
+.B_proyectos .project {
+  background-color: #0e1118;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  margin: 20px 0;
+  width: 90%;
+  max-width: 980px;
+  opacity: 0;
+  transition: opacity 1s ease, transform 2s ease;
+}
+
+.B_proyectos .project img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ----- Contacto ----- */
+.B_contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+  background: url("Fondos/Fondo_contacto.jpg") center/cover no-repeat;
+}
+
+.B_contacto .form_conctacto {
+  background-color: #0e1118;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  max-width: 700px;
+  width: 90%;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.B_contacto .form_conctacto.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.B_contacto input,
+.B_contacto textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.B_contacto .Rsociales {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background-color: #0e1118;
+  padding: 15px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.B_contacto .Rsociales.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.B_contacto .Rsociales a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.B_contacto .Rsociales a:hover { transform: scale(1.5); }
+
+/* ----- Footer ----- */
+footer {
+  background-color: #0e1118;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7f9f8;
+}
+
+/* ==========================
+   MEDIA QUERIES RESPONSIVE
+========================== */
+@media (max-width: 1024px) {
+  .B_arriba .LogoArriba { width: 80px; height: 80px; }
+  .B_inicio .DLGP, .B_inicio .DContexto { max-width: 400px; padding: 25px; font-size: 14px; }
+  .B_sobre_mi .Dsobremi { width: 280px; height: 280px; }
+  .B_sobre_mi .IconContainer { width: 300px; height: 300px; }
+  .B_sobre_mi .IconContainer .icon { width: 90px; height: 90px; }
+  .B_proyectos .project { width: 95%; }
+  .B_contacto .form_conctacto { width: 95%; padding: 30px; }
+}
+
+@media (max-width: 720px) {
+  .B_arriba ul { flex-direction: column; gap: 15px; }
+  .B_arriba .LogoArriba { width: 60px; height: 60px; }
+  .B_inicio .DLGP, .B_inicio .DContexto { max-width: 100%; padding: 15px; font-size: 12px; text-align: center; }
+  .B_sobre_mi .Dsobremi { width: 250px; height: 250px; margin-bottom: 20px; }
+  .B_sobre_mi .IconContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+  }
+  .B_sobre_mi .IconContainer .icon { position: relative; transform: none; }
+  .B_proyectos .project { width: 100%; }
+  .B_contacto .form_conctacto { width: 95%; padding: 20px; }
+  .B_contacto .Rsociales { width: 95%; font-size: 18px; }
+}
+@media (max-width: 480px) {
+  body { padding-top: 100px; }
+  .B_arriba { height: 100px; padding: 0 10px; }
+  .B_arriba .LogoArriba { width: 50px; height: 50px; }
+  .B_inicio { min-height: 600px; }
+  .B_sobre_mi { min-height: 600px; }
+  .B_proyectos { min-height: 800px; }
+  .B_contacto { min-height: 500px; }
+}
+
+/* ==========================
+   EFECTOS DE SCROLL
+
+========================== */
+/* Efecto fade-in para secciones */
+
+section p, section .Dsobremi, section .IconContainer .icon, section .project, section .form_conctacto, section .Rsociales {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section p.visible, section .Dsobremi.visible, section .IconContainer .icon.visible, section .project.visible, section .form_conctacto.visible, section .Rsociales.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Efecto hover para imágenes de proyectos */
+.B_proyectos .project img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+/* ==========================
+   FIN DE STYLES.CSS
+========================== */
