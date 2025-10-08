@@ -99,8 +99,3 @@ Todos los derechos están reservados por el propietario.
 📧 dewringiron821@gmail.com
 🔗 https://www.linkedin.com/in/dewrin-giron/
 🔗 https://portafoliodewrin.html-5.me/?i=1
-
-
-
-¿Quieres que le agregue también una **tabla de contenidos automática con enlaces internos** (como “Ir arriba ⬆️” o “Ver instalación ⚙️”)?
-Eso hace que el README sea más navegable cuando es largo.
