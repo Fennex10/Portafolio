@@ -94,7 +94,7 @@ Todos los derechos están reservados por el propietario.
 
 🌐 Autor
 
-**Fennex10**
+**Dewrin Giron**
 📍 Desarrollador Front-End
 📧 dewringiron821@gmail.com
 🔗 https://www.linkedin.com/in/dewrin-giron/
